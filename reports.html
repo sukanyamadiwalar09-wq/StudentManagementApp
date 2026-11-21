@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports - Student Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Sidebar -->
+    <nav class="sidebar">
+        <div class="logo-section">
+            <h1 class="logo">SMS</h1>
+            <p class="logo-text">Student Management</p>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="index.html" class="nav-link"><span class="icon">📊</span> Dashboard</a></li>
+            <li><a href="students.html" class="nav-link"><span class="icon">👥</span> Students</a></li>
+            <li><a href="classes.html" class="nav-link"><span class="icon">📚</span> Classes</a></li>
+            <li><a href="attendance.html" class="nav-link"><span class="icon">✓</span> Attendance</a></li>
+            <li><a href="grades.html" class="nav-link"><span class="icon">📈</span> Grades</a></li>
+            <li><a href="reports.html" class="nav-link active"><span class="icon">📋</span> Reports</a></li>
+            <li><a href="settings.html" class="nav-link"><span class="icon">⚙️</span> Settings</a></li>
+            <li><a href="login.html" class="nav-link logout"><span class="icon">🚪</span> Logout</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-left">
+            <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+            <h2>Reports</h2>
+        </div>
+        <div class="header-right">
+            <input type="text" placeholder="Search..." class="search-box">
+            <div class="user-profile">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='10' fill='%234CAF50'/%3E%3Ctext x='12' y='15' text-anchor='middle' fill='white' font-size='12' font-weight='bold'%3EAD%3C/text%3E%3C/svg%3E" alt="Admin">
+                <span>Admin</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="page-header">
+            <div>
+                <h1>Reports & Analytics</h1>
+                <p>Generate and view various reports</p>
+            </div>
+            <div class="action-buttons">
+                <button class="btn btn-primary">📥 Generate Report</button>
+                <button class="btn btn-secondary">📥 Export PDF</button>
+            </div>
+        </div>
+
+        <!-- Date Range Filter -->
+        <div class="card filter-section">
+            <div class="filter-group">
+                <label>Report Type:</label>
+                <select class="filter-select">
+                    <option>Student Performance</option>
+                    <option>Attendance Summary</option>
+                    <option>Fee Collection</option>
+                    <option>Class Wise Analysis</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>From Date:</label>
+                <input type="date" class="filter-input">
+            </div>
+            <div class="filter-group">
+                <label>To Date:</label>
+                <input type="date" class="filter-input">
+            </div>
+        </div>
+
+        <!-- Report Cards Grid -->
+        <div class="reports-grid">
+            <!-- Report 1 -->
+            <div class="report-card">
+                <div class="report-icon">📊</div>
+                <h3>Student Performance Report</h3>
+                <p>Get detailed performance metrics for students</p>
+                <div class="report-stats">
+                    <span>Last Generated: May 20, 2026</span>
+                </div>
+                <button class="btn btn-secondary btn-full">View Report</button>
+            </div>
+
+            <!-- Report 2 -->
+            <div class="report-card">
+                <div class="report-icon">✓</div>
+                <h3>Attendance Report</h3>
+                <p>Track attendance patterns and statistics</p>
+                <div class="report-stats">
+                    <span>Last Generated: May 22, 2026</span>
+                </div>
+                <button class="btn btn-secondary btn-full">View Report</button>
+            </div>
+
+            <!-- Report 3 -->
+            <div class="report-card">
+                <div class="report-icon">💰</div>
+                <h3>Fee Collection Report</h3>
+                <p>Monitor fee payments and arrears</p>
+                <div class="report-stats">
+                    <span>Last Generated: May 15, 2026</span>
+                </div>
+                <button class="btn btn-secondary btn-full">View Report</button>
+            </div>
+
+            <!-- Report 4 -->
+            <div class="report-card">
+                <div class="report-icon">📈</div>
+                <h3>Class Analysis Report</h3>
+                <p>Compare performance across classes</p>
+                <div class="report-stats">
+                    <span>Last Generated: May 18, 2026</span>
+                </div>
+                <button class="btn btn-secondary btn-full">View Report</button>
+            </div>
+
+            <!-- Report 5 -->
+            <div class="report-card">
+                <div class="report-icon">🎓</div>
+                <h3>Academic Results Report</h3>
+                <p>Final grades and academic progress</p>
+                <div class="report-stats">
+                    <span>Last Generated: May 10, 2026</span>
+                </div>
+                <button class="btn btn-secondary btn-full">View Report</button>
+            </div>
+
+            <!-- Report 6 -->
+            <div class="report-card">
+                <div class="report-icon">👥</div>
+                <h3>Enrollment Report</h3>
+                <p>Student enrollment and admission data</p>
+                <div class="report-stats">
+                    <span>Last Generated: May 23, 2026</span>
+                </div>
+                <button class="btn btn-secondary btn-full">View Report</button>
+            </div>
+        </div>
+
+        <!-- Analytics Section -->
+        <div class="card">
+            <div class="card-header">
+                <h3>Key Metrics</h3>
+            </div>
+            <div class="metrics-grid">
+                <div class="metric-box">
+                    <div class="metric-label">Total Enrollment</div>
+                    <div class="metric-value">1,245</div>
+                    <div class="metric-change">↑ 5.2% from last month</div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-label">Average Attendance</div>
+                    <div class="metric-value">94%</div>
+                    <div class="metric-change">↑ 2.1% from last month</div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-label">Average Grade</div>
+                    <div class="metric-value">78%</div>
+                    <div class="metric-change">→ Same as last month</div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-label">Pass Rate</div>
+                    <div class="metric-value">96%</div>
+                    <div class="metric-change">↑ 1.5% from last year</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Performance Trends -->
+        <div class="card">
+            <div class="card-header">
+                <h3>Performance Trends</h3>
+            </div>
+            <div class="trends-section">
+                <div class="trend-item">
+                    <span class="trend-name">Class 9-A</span>
+                    <div class="trend-bar">
+                        <div class="trend-fill" style="width: 82%"></div>
+                    </div>
+                    <span class="trend-percent">82%</span>
+                </div>
+                <div class="trend-item">
+                    <span class="trend-name">Class 9-B</span>
+                    <div class="trend-bar">
+                        <div class="trend-fill" style="width: 79%"></div>
+                    </div>
+                    <span class="trend-percent">79%</span>
+                </div>
+                <div class="trend-item">
+                    <span class="trend-name">Class 10-A</span>
+                    <div class="trend-bar">
+                        <div class="trend-fill" style="width: 85%"></div>
+                    </div>
+                    <span class="trend-percent">85%</span>
+                </div>
+                <div class="trend-item">
+                    <span class="trend-name">Class 10-B</span>
+                    <div class="trend-bar">
+                        <div class="trend-fill" style="width: 83%"></div>
+                    </div>
+                    <span class="trend-percent">83%</span>
+                </div>
+                <div class="trend-item">
+                    <span class="trend-name">Class 10-C</span>
+                    <div class="trend-bar">
+                        <div class="trend-fill" style="width: 81%"></div>
+                    </div>
+                    <span class="trend-percent">81%</span>
+                </div>
+                <div class="trend-item">
+                    <span class="trend-name">Class 11-A</span>
+                    <div class="trend-bar">
+                        <div class="trend-fill" style="width: 88%"></div>
+                    </div>
+                    <span class="trend-percent">88%</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

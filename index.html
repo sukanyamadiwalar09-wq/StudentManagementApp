@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management System - Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Sidebar -->
+    <nav class="sidebar">
+        <div class="logo-section">
+            <h1 class="logo">SMS</h1>
+            <p class="logo-text">Student Management</p>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="index.html" class="nav-link active"><span class="icon">📊</span> Dashboard</a></li>
+            <li><a href="students.html" class="nav-link"><span class="icon">👥</span> Students</a></li>
+            <li><a href="classes.html" class="nav-link"><span class="icon">📚</span> Classes</a></li>
+            <li><a href="attendance.html" class="nav-link"><span class="icon">✓</span> Attendance</a></li>
+            <li><a href="grades.html" class="nav-link"><span class="icon">📈</span> Grades</a></li>
+            <li><a href="reports.html" class="nav-link"><span class="icon">📋</span> Reports</a></li>
+            <li><a href="settings.html" class="nav-link"><span class="icon">⚙️</span> Settings</a></li>
+            <li><a href="login.html" class="nav-link logout"><span class="icon">🚪</span> Logout</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-left">
+            <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+            <h2>Dashboard</h2>
+        </div>
+        <div class="header-right">
+            <input type="text" placeholder="Search..." class="search-box">
+            <div class="user-profile">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='10' fill='%234CAF50'/%3E%3Ctext x='12' y='15' text-anchor='middle' fill='white' font-size='12' font-weight='bold'%3EAD%3C/text%3E%3C/svg%3E" alt="Admin">
+                <span>Admin</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Stats Section -->
+        <section class="stats-section">
+            <div class="stat-card">
+                <div class="stat-icon" style="background-color: #e3f2fd;">
+                    <span>👥</span>
+                </div>
+                <div class="stat-info">
+                    <h3>Total Students</h3>
+                    <p class="stat-number">1,245</p>
+                    <small>+12 this month</small>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon" style="background-color: #f3e5f5;">
+                    <span>📚</span>
+                </div>
+                <div class="stat-info">
+                    <h3>Total Classes</h3>
+                    <p class="stat-number">28</p>
+                    <small>Active programs</small>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon" style="background-color: #e8f5e9;">
+                    <span>✓</span>
+                </div>
+                <div class="stat-info">
+                    <h3>Attendance Today</h3>
+                    <p class="stat-number">94%</p>
+                    <small>Present: 1,170</small>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon" style="background-color: #fff3e0;">
+                    <span>📈</span>
+                </div>
+                <div class="stat-info">
+                    <h3>Avg. Performance</h3>
+                    <p class="stat-number">78%</p>
+                    <small>Grade: B+</small>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dashboard Content -->
+        <div class="dashboard-grid">
+            <!-- Recent Students -->
+            <div class="card">
+                <div class="card-header">
+                    <h3>Recent Admissions</h3>
+                    <a href="students.html" class="view-all">View All →</a>
+                </div>
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Student Name</th>
+                                <th>ID</th>
+                                <th>Class</th>
+                                <th>Admission Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>John Williams</td>
+                                <td>STU-2026-001</td>
+                                <td>Class 10-A</td>
+                                <td>May 20, 2026</td>
+                            </tr>
+                            <tr>
+                                <td>Sarah Johnson</td>
+                                <td>STU-2026-002</td>
+                                <td>Class 9-B</td>
+                                <td>May 19, 2026</td>
+                            </tr>
+                            <tr>
+                                <td>Michael Brown</td>
+                                <td>STU-2026-003</td>
+                                <td>Class 11-A</td>
+                                <td>May 18, 2026</td>
+                            </tr>
+                            <tr>
+                                <td>Emma Davis</td>
+                                <td>STU-2026-004</td>
+                                <td>Class 10-C</td>
+                                <td>May 17, 2026</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Attendance Breakdown -->
+            <div class="card">
+                <div class="card-header">
+                    <h3>Attendance Overview</h3>
+                </div>
+                <div class="attendance-chart">
+                    <div class="chart-item">
+                        <div class="progress-ring">
+                            <svg viewBox="0 0 100 100">
+                                <circle cx="50" cy="50" r="45" fill="none" stroke="#e0e0e0" stroke-width="8"/>
+                                <circle cx="50" cy="50" r="45" fill="none" stroke="#4CAF50" stroke-width="8" 
+                                    stroke-dasharray="282.7" stroke-dashoffset="56.54" transform="rotate(-90 50 50)"/>
+                            </svg>
+                            <div class="chart-text">
+                                <span class="chart-percent">94%</span>
+                                <span class="chart-label">Present</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="attendance-stats">
+                        <div class="attendance-item">
+                            <span class="status present">■</span>
+                            <span>Present: 1,170</span>
+                        </div>
+                        <div class="attendance-item">
+                            <span class="status absent">■</span>
+                            <span>Absent: 65</span>
+                        </div>
+                        <div class="attendance-item">
+                            <span class="status leave">■</span>
+                            <span>Leave: 10</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Performance Section -->
+        <div class="card">
+            <div class="card-header">
+                <h3>Class Performance</h3>
+                <a href="grades.html" class="view-all">View Grades →</a>
+            </div>
+            <div class="performance-grid">
+                <div class="performance-item">
+                    <div class="class-name">Class 10-A</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 85%"></div>
+                    </div>
+                    <div class="performance-text">Average: 85%</div>
+                </div>
+                <div class="performance-item">
+                    <div class="class-name">Class 10-B</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 78%"></div>
+                    </div>
+                    <div class="performance-text">Average: 78%</div>
+                </div>
+                <div class="performance-item">
+                    <div class="class-name">Class 10-C</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 82%"></div>
+                    </div>
+                    <div class="performance-text">Average: 82%</div>
+                </div>
+                <div class="performance-item">
+                    <div class="class-name">Class 11-A</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 88%"></div>
+                    </div>
+                    <div class="performance-text">Average: 88%</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

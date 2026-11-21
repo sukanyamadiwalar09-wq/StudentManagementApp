@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students - Student Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Sidebar -->
+    <nav class="sidebar">
+        <div class="logo-section">
+            <h1 class="logo">SMS</h1>
+            <p class="logo-text">Student Management</p>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="index.html" class="nav-link"><span class="icon">📊</span> Dashboard</a></li>
+            <li><a href="students.html" class="nav-link active"><span class="icon">👥</span> Students</a></li>
+            <li><a href="classes.html" class="nav-link"><span class="icon">📚</span> Classes</a></li>
+            <li><a href="attendance.html" class="nav-link"><span class="icon">✓</span> Attendance</a></li>
+            <li><a href="grades.html" class="nav-link"><span class="icon">📈</span> Grades</a></li>
+            <li><a href="reports.html" class="nav-link"><span class="icon">📋</span> Reports</a></li>
+            <li><a href="settings.html" class="nav-link"><span class="icon">⚙️</span> Settings</a></li>
+            <li><a href="login.html" class="nav-link logout"><span class="icon">🚪</span> Logout</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-left">
+            <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+            <h2>Students</h2>
+        </div>
+        <div class="header-right">
+            <input type="text" placeholder="Search students..." class="search-box">
+            <div class="user-profile">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='10' fill='%234CAF50'/%3E%3Ctext x='12' y='15' text-anchor='middle' fill='white' font-size='12' font-weight='bold'%3EAD%3C/text%3E%3C/svg%3E" alt="Admin">
+                <span>Admin</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Page Title with Buttons -->
+        <div class="page-header">
+            <div>
+                <h1>Student List</h1>
+                <p>Manage all students in the system</p>
+            </div>
+            <div class="action-buttons">
+                <button class="btn btn-primary" onclick="openAddStudent()">+ Add New Student</button>
+                <button class="btn btn-secondary">⬇️ Export</button>
+            </div>
+        </div>
+
+        <!-- Filters -->
+        <div class="card filter-section">
+            <div class="filter-group">
+                <label>Filter by Class:</label>
+                <select class="filter-select">
+                    <option>All Classes</option>
+                    <option>Class 9-A</option>
+                    <option>Class 9-B</option>
+                    <option>Class 10-A</option>
+                    <option>Class 10-B</option>
+                    <option>Class 10-C</option>
+                    <option>Class 11-A</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>Filter by Status:</label>
+                <select class="filter-select">
+                    <option>All</option>
+                    <option>Active</option>
+                    <option>Inactive</option>
+                    <option>On Leave</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>Sort by:</label>
+                <select class="filter-select">
+                    <option>Name (A-Z)</option>
+                    <option>Name (Z-A)</option>
+                    <option>Roll Number</option>
+                    <option>Admission Date</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Students Table -->
+        <div class="card">
+            <div class="card-header">
+                <h3>All Students (1,245)</h3>
+            </div>
+            <div class="table-responsive">
+                <table class="students-table">
+                    <thead>
+                        <tr>
+                            <th>Roll No.</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Class</th>
+                            <th>Contact</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>STU-001</td>
+                            <td>John Williams</td>
+                            <td>john.williams@school.com</td>
+                            <td>Class 10-A</td>
+                            <td>+1 (555) 123-4567</td>
+                            <td><span class="status-badge active">Active</span></td>
+                            <td>
+                                <button class="action-btn view-btn" onclick="viewStudent(1)">👁️</button>
+                                <button class="action-btn edit-btn" onclick="editStudent(1)">✏️</button>
+                                <button class="action-btn delete-btn" onclick="deleteStudent(1)">🗑️</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>STU-002</td>
+                            <td>Sarah Johnson</td>
+                            <td>sarah.johnson@school.com</td>
+                            <td>Class 9-B</td>
+                            <td>+1 (555) 234-5678</td>
+                            <td><span class="status-badge active">Active</span></td>
+                            <td>
+                                <button class="action-btn view-btn" onclick="viewStudent(2)">👁️</button>
+                                <button class="action-btn edit-btn" onclick="editStudent(2)">✏️</button>
+                                <button class="action-btn delete-btn" onclick="deleteStudent(2)">🗑️</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>STU-003</td>
+                            <td>Michael Brown</td>
+                            <td>michael.brown@school.com</td>
+                            <td>Class 11-A</td>
+                            <td>+1 (555) 345-6789</td>
+                            <td><span class="status-badge active">Active</span></td>
+                            <td>
+                                <button class="action-btn view-btn" onclick="viewStudent(3)">👁️</button>
+                                <button class="action-btn edit-btn" onclick="editStudent(3)">✏️</button>
+                                <button class="action-btn delete-btn" onclick="deleteStudent(3)">🗑️</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>STU-004</td>
+                            <td>Emma Davis</td>
+                            <td>emma.davis@school.com</td>
+                            <td>Class 10-C</td>
+                            <td>+1 (555) 456-7890</td>
+                            <td><span class="status-badge inactive">Inactive</span></td>
+                            <td>
+                                <button class="action-btn view-btn" onclick="viewStudent(4)">👁️</button>
+                                <button class="action-btn edit-btn" onclick="editStudent(4)">✏️</button>
+                                <button class="action-btn delete-btn" onclick="deleteStudent(4)">🗑️</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>STU-005</td>
+                            <td>David Miller</td>
+                            <td>david.miller@school.com</td>
+                            <td>Class 10-B</td>
+                            <td>+1 (555) 567-8901</td>
+                            <td><span class="status-badge active">Active</span></td>
+                            <td>
+                                <button class="action-btn view-btn" onclick="viewStudent(5)">👁️</button>
+                                <button class="action-btn edit-btn" onclick="editStudent(5)">✏️</button>
+                                <button class="action-btn delete-btn" onclick="deleteStudent(5)">🗑️</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>STU-006</td>
+                            <td>Lisa Anderson</td>
+                            <td>lisa.anderson@school.com</td>
+                            <td>Class 9-A</td>
+                            <td>+1 (555) 678-9012</td>
+                            <td><span class="status-badge active">Active</span></td>
+                            <td>
+                                <button class="action-btn view-btn" onclick="viewStudent(6)">👁️</button>
+                                <button class="action-btn edit-btn" onclick="editStudent(6)">✏️</button>
+                                <button class="action-btn delete-btn" onclick="deleteStudent(6)">🗑️</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- Pagination -->
+            <div class="pagination">
+                <button class="pagination-btn">← Previous</button>
+                <button class="pagination-btn active">1</button>
+                <button class="pagination-btn">2</button>
+                <button class="pagination-btn">3</button>
+                <button class="pagination-btn">Next →</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

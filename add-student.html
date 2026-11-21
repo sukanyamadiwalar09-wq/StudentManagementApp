@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add/Edit Student - Student Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Sidebar -->
+    <nav class="sidebar">
+        <div class="logo-section">
+            <h1 class="logo">SMS</h1>
+            <p class="logo-text">Student Management</p>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="index.html" class="nav-link"><span class="icon">📊</span> Dashboard</a></li>
+            <li><a href="students.html" class="nav-link active"><span class="icon">👥</span> Students</a></li>
+            <li><a href="classes.html" class="nav-link"><span class="icon">📚</span> Classes</a></li>
+            <li><a href="attendance.html" class="nav-link"><span class="icon">✓</span> Attendance</a></li>
+            <li><a href="grades.html" class="nav-link"><span class="icon">📈</span> Grades</a></li>
+            <li><a href="reports.html" class="nav-link"><span class="icon">📋</span> Reports</a></li>
+            <li><a href="settings.html" class="nav-link"><span class="icon">⚙️</span> Settings</a></li>
+            <li><a href="login.html" class="nav-link logout"><span class="icon">🚪</span> Logout</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-left">
+            <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+            <h2>Add/Edit Student</h2>
+        </div>
+        <div class="header-right">
+            <input type="text" placeholder="Search..." class="search-box">
+            <div class="user-profile">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='10' fill='%234CAF50'/%3E%3Ctext x='12' y='15' text-anchor='middle' fill='white' font-size='12' font-weight='bold'%3EAD%3C/text%3E%3C/svg%3E" alt="Admin">
+                <span>Admin</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Breadcrumb -->
+        <div class="breadcrumb">
+            <a href="students.html">Students</a>
+            <span>/</span>
+            <span>Add New Student</span>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <h3>Student Information</h3>
+            </div>
+
+            <form class="form-grid">
+                <!-- Personal Information -->
+                <div class="form-section">
+                    <h4>Personal Information</h4>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>First Name *</label>
+                            <input type="text" placeholder="Enter first name" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Last Name *</label>
+                            <input type="text" placeholder="Enter last name" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Date of Birth *</label>
+                            <input type="date" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Gender *</label>
+                            <select required>
+                                <option value="">Select Gender</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Email *</label>
+                            <input type="email" placeholder="Enter email address" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Phone Number</label>
+                            <input type="tel" placeholder="Enter phone number">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Academic Information -->
+                <div class="form-section">
+                    <h4>Academic Information</h4>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Enroll Number *</label>
+                            <input type="text" placeholder="STU-YYYY-XXXX" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Roll Number *</label>
+                            <input type="text" placeholder="Enter roll number" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Class *</label>
+                            <select required>
+                                <option value="">Select Class</option>
+                                <option value="9a">Class 9-A</option>
+                                <option value="9b">Class 9-B</option>
+                                <option value="10a">Class 10-A</option>
+                                <option value="10b">Class 10-B</option>
+                                <option value="10c">Class 10-C</option>
+                                <option value="11a">Class 11-A</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Section</label>
+                            <input type="text" placeholder="A, B, C, etc.">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Admission Date *</label>
+                            <input type="date" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Status *</label>
+                            <select required>
+                                <option value="">Select Status</option>
+                                <option value="active">Active</option>
+                                <option value="inactive">Inactive</option>
+                                <option value="onleave">On Leave</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="form-section">
+                    <h4>Guardian Information</h4>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Guardian Name *</label>
+                            <input type="text" placeholder="Enter guardian name" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Relationship *</label>
+                            <select required>
+                                <option value="">Select Relationship</option>
+                                <option value="father">Father</option>
+                                <option value="mother">Mother</option>
+                                <option value="guardian">Guardian</option>
+                                <option value="relative">Relative</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Guardian Phone *</label>
+                            <input type="tel" placeholder="Enter contact number" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Guardian Email</label>
+                            <input type="email" placeholder="Enter email address">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group full-width">
+                            <label>Address</label>
+                            <textarea placeholder="Enter residential address" rows="3"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Address Information -->
+                <div class="form-section">
+                    <h4>Additional Information</h4>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>City</label>
+                            <input type="text" placeholder="Enter city">
+                        </div>
+                        <div class="form-group">
+                            <label>State</label>
+                            <input type="text" placeholder="Enter state">
+                        </div>
+                        <div class="form-group">
+                            <label>Postal Code</label>
+                            <input type="text" placeholder="Enter postal code">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group full-width">
+                            <label>Special Notes</label>
+                            <textarea placeholder="Any special notes or medical conditions..." rows="3"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form Actions -->
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary btn-lg">Save Student</button>
+                    <button type="reset" class="btn btn-secondary btn-lg">Clear Form</button>
+                    <a href="students.html" class="btn btn-outline btn-lg">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - Student Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Sidebar -->
+    <nav class="sidebar">
+        <div class="logo-section">
+            <h1 class="logo">SMS</h1>
+            <p class="logo-text">Student Management</p>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="index.html" class="nav-link"><span class="icon">📊</span> Dashboard</a></li>
+            <li><a href="students.html" class="nav-link"><span class="icon">👥</span> Students</a></li>
+            <li><a href="classes.html" class="nav-link"><span class="icon">📚</span> Classes</a></li>
+            <li><a href="attendance.html" class="nav-link"><span class="icon">✓</span> Attendance</a></li>
+            <li><a href="grades.html" class="nav-link"><span class="icon">📈</span> Grades</a></li>
+            <li><a href="reports.html" class="nav-link"><span class="icon">📋</span> Reports</a></li>
+            <li><a href="settings.html" class="nav-link active"><span class="icon">⚙️</span> Settings</a></li>
+            <li><a href="login.html" class="nav-link logout"><span class="icon">🚪</span> Logout</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-left">
+            <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+            <h2>Settings</h2>
+        </div>
+        <div class="header-right">
+            <input type="text" placeholder="Search..." class="search-box">
+            <div class="user-profile">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='10' fill='%234CAF50'/%3E%3Ctext x='12' y='15' text-anchor='middle' fill='white' font-size='12' font-weight='bold'%3EAD%3C/text%3E%3C/svg%3E" alt="Admin">
+                <span>Admin</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="settings-container">
+            <!-- Settings Sidebar -->
+            <div class="settings-sidebar">
+                <div class="settings-nav">
+                    <a href="#general" class="settings-link active" onclick="showSection('general')">
+                        <span class="settings-icon">⚙️</span> General Settings
+                    </a>
+                    <a href="#profile" class="settings-link" onclick="showSection('profile')">
+                        <span class="settings-icon">👤</span> Profile Settings
+                    </a>
+                    <a href="#security" class="settings-link" onclick="showSection('security')">
+                        <span class="settings-icon">🔒</span> Security
+                    </a>
+                    <a href="#notification" class="settings-link" onclick="showSection('notification')">
+                        <span class="settings-icon">🔔</span> Notifications
+                    </a>
+                    <a href="#backup" class="settings-link" onclick="showSection('backup')">
+                        <span class="settings-icon">💾</span> Backup & Recovery
+                    </a>
+                    <a href="#about" class="settings-link" onclick="showSection('about')">
+                        <span class="settings-icon">ℹ️</span> About
+                    </a>
+                </div>
+            </div>
+
+            <!-- Settings Content -->
+            <div class="settings-content">
+                <!-- General Settings -->
+                <div id="general" class="settings-section active">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>General Settings</h3>
+                        </div>
+                        <div class="settings-form">
+                            <div class="form-group">
+                                <label>School/Institution Name</label>
+                                <input type="text" value="Green Valley High School" placeholder="Enter school name">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Academic Year</label>
+                                <input type="text" value="2025-2026" placeholder="e.g., 2025-2026">
+                            </div>
+
+                            <div class="form-group">
+                                <label>School Email</label>
+                                <input type="email" value="info@gvhs.edu" placeholder="Enter school email">
+                            </div>
+
+                            <div class="form-group">
+                                <label>School Phone</label>
+                                <input type="tel" value="+1 (555) 123-4567" placeholder="Enter phone number">
+                            </div>
+
+                            <div class="form-group">
+                                <label>School Address</label>
+                                <textarea rows="3">123 Education Street, Springfield, IL 62701</textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Language Preference</label>
+                                <select>
+                                    <option>English</option>
+                                    <option>Spanish</option>
+                                    <option>French</option>
+                                    <option>German</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Date Format</label>
+                                <select>
+                                    <option>MM/DD/YYYY</option>
+                                    <option>DD/MM/YYYY</option>
+                                    <option>YYYY-MM-DD</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Timezone</label>
+                                <select>
+                                    <option>Central Time (CT)</option>
+                                    <option>Eastern Time (ET)</option>
+                                    <option>Mountain Time (MT)</option>
+                                    <option>Pacific Time (PT)</option>
+                                </select>
+                            </div>
+
+                            <div class="form-actions">
+                                <button class="btn btn-primary">Save Changes</button>
+                                <button class="btn btn-secondary">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Profile Settings -->
+                <div id="profile" class="settings-section">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Profile Settings</h3>
+                        </div>
+                        <div class="profile-section">
+                            <div class="profile-header">
+                                <div class="profile-avatar-large">
+                                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%234CAF50'/%3E%3Ctext x='50' y='50' text-anchor='middle' dominant-baseline='middle' fill='white' font-size='40' font-weight='bold'%3EAD%3C/text%3E%3C/svg%3E" alt="Profile">
+                                </div>
+                                <button class="btn btn-secondary">Change Avatar</button>
+                            </div>
+                        </div>
+                        <div class="settings-form">
+                            <div class="form-group">
+                                <label>Full Name</label>
+                                <input type="text" value="Administrator" placeholder="Enter full name">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Email Address</label>
+                                <input type="email" value="admin@gvhs.edu" placeholder="Enter email">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Phone Number</label>
+                                <input type="tel" value="+1 (555) 987-6543" placeholder="Enter phone">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Designation</label>
+                                <input type="text" value="Principal" placeholder="Enter designation">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Department</label>
+                                <input type="text" value="Administration" placeholder="Enter department">
+                            </div>
+
+                            <div class="form-actions">
+                                <button class="btn btn-primary">Update Profile</button>
+                                <button class="btn btn-secondary">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Security Settings -->
+                <div id="security" class="settings-section">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Security Settings</h3>
+                        </div>
+                        <div class="settings-form">
+                            <div class="section-title">Change Password</div>
+                            <div class="form-group">
+                                <label>Current Password</label>
+                                <input type="password" placeholder="Enter current password">
+                            </div>
+
+                            <div class="form-group">
+                                <label>New Password</label>
+                                <input type="password" placeholder="Enter new password">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Confirm New Password</label>
+                                <input type="password" placeholder="Confirm new password">
+                            </div>
+
+                            <div class="form-actions">
+                                <button class="btn btn-primary">Update Password</button>
+                                <button class="btn btn-secondary">Cancel</button>
+                            </div>
+
+                            <hr style="margin: 30px 0;">
+
+                            <div class="section-title">Two-Factor Authentication</div>
+                            <div class="toggle-option">
+                                <div>
+                                    <strong>Enable Two-Factor Authentication</strong>
+                                    <p>Add an extra layer of security to your account</p>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+
+                            <hr style="margin: 30px 0;">
+
+                            <div class="section-title">Active Sessions</div>
+                            <div class="sessions-list">
+                                <div class="session-item">
+                                    <span>Current Device (Windows)</span>
+                                    <span class="session-date">Active now</span>
+                                    <button class="btn-small">Logout</button>
+                                </div>
+                                <div class="session-item">
+                                    <span>Mobile Device (iOS)</span>
+                                    <span class="session-date">Last active: 2 hours ago</span>
+                                    <button class="btn-small">Logout</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Notification Settings -->
+                <div id="notification" class="settings-section">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Notification Settings</h3>
+                        </div>
+                        <div class="settings-form">
+                            <div class="toggle-option">
+                                <div>
+                                    <strong>Email Notifications</strong>
+                                    <p>Receive email updates on important events</p>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+
+                            <div class="toggle-option">
+                                <div>
+                                    <strong>New Student Enrollment</strong>
+                                    <p>Get notified when new students are enrolled</p>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+
+                            <div class="toggle-option">
+                                <div>
+                                    <strong>Grade Updates</strong>
+                                    <p>Notify about grade entries and updates</p>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+
+                            <div class="toggle-option">
+                                <div>
+                                    <strong>Attendance Alerts</strong>
+                                    <p>Alert for low attendance records</p>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+
+                            <div class="toggle-option">
+                                <div>
+                                    <strong>System Maintenance</strong>
+                                    <p>Receive notifications about system updates</p>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+
+                            <div class="form-actions">
+                                <button class="btn btn-primary">Save Preferences</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Backup & Recovery -->
+                <div id="backup" class="settings-section">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Backup & Recovery</h3>
+                        </div>
+                        <div class="settings-form">
+                            <div class="section-title">Data Backup</div>
+                            <div class="backup-info">
+                                <p>Last backup: <strong>May 22, 2026 at 2:30 PM</strong></p>
+                                <p>Backup size: <strong>250 MB</strong></p>
+                            </div>
+                            <div class="form-actions">
+                                <button class="btn btn-primary">Create Backup Now</button>
+                                <button class="btn btn-secondary">Download Backup</button>
+                            </div>
+
+                            <hr style="margin: 30px 0;">
+
+                            <div class="section-title">Restore Data</div>
+                            <div class="form-group">
+                                <label>Select Backup File</label>
+                                <input type="file">
+                            </div>
+                            <div class="form-actions">
+                                <button class="btn btn-warning">Restore Data</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- About -->
+                <div id="about" class="settings-section">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>About Student Management System</h3>
+                        </div>
+                        <div class="about-content">
+                            <div class="about-item">
+                                <label>System Version</label>
+                                <p>1.0.0</p>
+                            </div>
+                            <div class="about-item">
+                                <label>Release Date</label>
+                                <p>May 1, 2026</p>
+                            </div>
+                            <div class="about-item">
+                                <label>Developer</label>
+                                <p>Education Solutions Inc.</p>
+                            </div>
+                            <div class="about-item">
+                                <label>Contact Support</label>
+                                <p>support@edusolutions.com</p>
+                            </div>
+                            <div class="about-item">
+                                <label>License</label>
+                                <p>Professional License - Active</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

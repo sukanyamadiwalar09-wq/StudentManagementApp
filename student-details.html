@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Details - Student Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Sidebar -->
+    <nav class="sidebar">
+        <div class="logo-section">
+            <h1 class="logo">SMS</h1>
+            <p class="logo-text">Student Management</p>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="index.html" class="nav-link"><span class="icon">📊</span> Dashboard</a></li>
+            <li><a href="students.html" class="nav-link active"><span class="icon">👥</span> Students</a></li>
+            <li><a href="classes.html" class="nav-link"><span class="icon">📚</span> Classes</a></li>
+            <li><a href="attendance.html" class="nav-link"><span class="icon">✓</span> Attendance</a></li>
+            <li><a href="grades.html" class="nav-link"><span class="icon">📈</span> Grades</a></li>
+            <li><a href="reports.html" class="nav-link"><span class="icon">📋</span> Reports</a></li>
+            <li><a href="settings.html" class="nav-link"><span class="icon">⚙️</span> Settings</a></li>
+            <li><a href="login.html" class="nav-link logout"><span class="icon">🚪</span> Logout</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-left">
+            <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+            <h2>Student Details</h2>
+        </div>
+        <div class="header-right">
+            <input type="text" placeholder="Search..." class="search-box">
+            <div class="user-profile">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='10' fill='%234CAF50'/%3E%3Ctext x='12' y='15' text-anchor='middle' fill='white' font-size='12' font-weight='bold'%3EAD%3C/text%3E%3C/svg%3E" alt="Admin">
+                <span>Admin</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Breadcrumb & Actions -->
+        <div class="breadcrumb-section">
+            <div class="breadcrumb">
+                <a href="students.html">Students</a>
+                <span>/</span>
+                <span>John Williams (STU-001)</span>
+            </div>
+            <div class="action-buttons">
+                <button class="btn btn-secondary" onclick="editStudent()">✏️ Edit</button>
+                <button class="btn btn-secondary">📄 Print</button>
+                <button class="btn btn-secondary">📧 Send Email</button>
+            </div>
+        </div>
+
+        <div class="details-grid">
+            <!-- Profile Card -->
+            <div class="card student-profile-card">
+                <div class="profile-header">
+                    <div class="profile-avatar">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%234CAF50'/%3E%3Ctext x='50' y='50' text-anchor='middle' dominant-baseline='middle' fill='white' font-size='40' font-weight='bold'%3EJW%3C/text%3E%3C/svg%3E" alt="Student">
+                    </div>
+                    <div class="profile-info">
+                        <h2>John Williams</h2>
+                        <p class="student-id">Roll No: STU-001</p>
+                        <span class="status-badge active">Active</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Personal Information -->
+            <div class="card">
+                <div class="card-header">
+                    <h3>Personal Information</h3>
+                </div>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <label>Full Name</label>
+                        <p>John Williams</p>
+                    </div>
+                    <div class="info-item">
+                        <label>Date of Birth</label>
+                        <p>March 15, 2008</p>
+                    </div>
+                    <div class="info-item">
+                        <label>Gender</label>
+                        <p>Male</p>
+                    </div>
+                    <div class="info-item">
+                        <label>Email</label>
+                        <p>john.williams@school.com</p>
+                    </div>
+                    <div class="info-item">
+                        <label>Phone</label>
+                        <p>+1 (555) 123-4567</p>
+                    </div>
+                    <div class="info-item">
+                        <label>Age</label>
+                        <p>18 years</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Academic Information -->
+            <div class="card">
+                <div class="card-header">
+                    <h3>Academic Information</h3>
+                </div>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <label>Enrollment Number</label>
+                        <p>STU-2026-001</p>
+                    </div>
+                    <div class="info-item">
+                        <label>Roll Number</label>
+                        <p>001</p>
+                    </div>
+                    <div class="info-item">
+                        <label>Class</label>
+                        <p>Class 10-A</p>
+                    </div>
+                    <div class="info-item">
+                        <label>Admission Date</label>
+                        <p>May 20, 2026</p>
+                    </div>
+                    <div class="info-item">
+                        <label>Current Status</label>
+                        <p><span class="status-badge active">Active</span></p>
+                    </div>
+                    <div class="info-item">
+                        <label>GPA</label>
+                        <p>3.8</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Guardian Information -->
+            <div class="card">
+                <div class="card-header">
+                    <h3>Guardian Information</h3>
+                </div>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <label>Guardian Name</label>
+                        <p>Robert Williams</p>
+                    </div>
+                    <div class="info-item">
+                        <label>Relationship</label>
+                        <p>Father</p>
+                    </div>
+                    <div class="info-item">
+                        <label>Guardian Phone</label>
+                        <p>+1 (555) 123-4560</p>
+                    </div>
+                    <div class="info-item">
+                        <label>Guardian Email</label>
+                        <p>robert.williams@email.com</p>
+                    </div>
+                    <div class="info-item full-width">
+                        <label>Address</label>
+                        <p>123 Main Street, Springfield, IL 62701</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Attendance Summary -->
+            <div class="card">
+                <div class="card-header">
+                    <h3>Attendance Summary</h3>
+                    <a href="attendance.html" class="view-all">View Details →</a>
+                </div>
+                <div class="attendance-summary">
+                    <div class="summary-stat">
+                        <span class="stat-label">Total Days</span>
+                        <span class="stat-value">180</span>
+                    </div>
+                    <div class="summary-stat">
+                        <span class="stat-label present">Present</span>
+                        <span class="stat-value">172</span>
+                    </div>
+                    <div class="summary-stat">
+                        <span class="stat-label absent">Absent</span>
+                        <span class="stat-value">6</span>
+                    </div>
+                    <div class="summary-stat">
+                        <span class="stat-label leave">Leave</span>
+                        <span class="stat-value">2</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Academic Performance -->
+            <div class="card">
+                <div class="card-header">
+                    <h3>Academic Performance</h3>
+                    <a href="grades.html" class="view-all">View Grades →</a>
+                </div>
+                <div class="performance-section">
+                    <div class="performance-row">
+                        <span>Mathematics</span>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 88%"></div>
+                        </div>
+                        <span>88%</span>
+                    </div>
+                    <div class="performance-row">
+                        <span>English</span>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 92%"></div>
+                        </div>
+                        <span>92%</span>
+                    </div>
+                    <div class="performance-row">
+                        <span>Science</span>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 85%"></div>
+                        </div>
+                        <span>85%</span>
+                    </div>
+                    <div class="performance-row">
+                        <span>Social Studies</span>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 90%"></div>
+                        </div>
+                        <span>90%</span>
+                    </div>
+                </div>
+                <div class="avg-gpa">
+                    <strong>Current GPA:</strong> <span class="gpa-value">3.88</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

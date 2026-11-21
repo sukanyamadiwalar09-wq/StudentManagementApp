@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grades - Student Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Sidebar -->
+    <nav class="sidebar">
+        <div class="logo-section">
+            <h1 class="logo">SMS</h1>
+            <p class="logo-text">Student Management</p>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="index.html" class="nav-link"><span class="icon">📊</span> Dashboard</a></li>
+            <li><a href="students.html" class="nav-link"><span class="icon">👥</span> Students</a></li>
+            <li><a href="classes.html" class="nav-link"><span class="icon">📚</span> Classes</a></li>
+            <li><a href="attendance.html" class="nav-link"><span class="icon">✓</span> Attendance</a></li>
+            <li><a href="grades.html" class="nav-link active"><span class="icon">📈</span> Grades</a></li>
+            <li><a href="reports.html" class="nav-link"><span class="icon">📋</span> Reports</a></li>
+            <li><a href="settings.html" class="nav-link"><span class="icon">⚙️</span> Settings</a></li>
+            <li><a href="login.html" class="nav-link logout"><span class="icon">🚪</span> Logout</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-left">
+            <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+            <h2>Grades</h2>
+        </div>
+        <div class="header-right">
+            <input type="text" placeholder="Search..." class="search-box">
+            <div class="user-profile">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='10' fill='%234CAF50'/%3E%3Ctext x='12' y='15' text-anchor='middle' fill='white' font-size='12' font-weight='bold'%3EAD%3C/text%3E%3C/svg%3E" alt="Admin">
+                <span>Admin</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="page-header">
+            <div>
+                <h1>Grades & Results</h1>
+                <p>Manage student grades and performance</p>
+            </div>
+            <div class="action-buttons">
+                <button class="btn btn-primary">+ Enter Grades</button>
+                <button class="btn btn-secondary">📊 Analytics</button>
+            </div>
+        </div>
+
+        <!-- Filters -->
+        <div class="card filter-section">
+            <div class="filter-group">
+                <label>Select Class:</label>
+                <select class="filter-select">
+                    <option>All Classes</option>
+                    <option>Class 9-A</option>
+                    <option>Class 9-B</option>
+                    <option>Class 10-A</option>
+                    <option>Class 10-B</option>
+                    <option>Class 10-C</option>
+                    <option>Class 11-A</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>Exam Period:</label>
+                <select class="filter-select">
+                    <option>Final Exam 2026</option>
+                    <option>Mid Exam 2026</option>
+                    <option>Quarterly Test 2025</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>Subject:</label>
+                <select class="filter-select">
+                    <option>All Subjects</option>
+                    <option>Mathematics</option>
+                    <option>English</option>
+                    <option>Science</option>
+                    <option>Social Studies</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Grades Table -->
+        <div class="card">
+            <div class="card-header">
+                <h3>Grade Sheet - Class 10-A (Final Exam 2026)</h3>
+            </div>
+            <div class="table-responsive">
+                <table class="grades-table">
+                    <thead>
+                        <tr>
+                            <th>Roll No.</th>
+                            <th>Student Name</th>
+                            <th>Mathematics</th>
+                            <th>English</th>
+                            <th>Science</th>
+                            <th>Social Studies</th>
+                            <th>Total</th>
+                            <th>Average</th>
+                            <th>Grade</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>John Williams</td>
+                            <td><input type="number" class="grade-input" value="88" min="0" max="100"></td>
+                            <td><input type="number" class="grade-input" value="92" min="0" max="100"></td>
+                            <td><input type="number" class="grade-input" value="85" min="0" max="100"></td>
+                            <td><input type="number" class="grade-input" value="90" min="0" max="100"></td>
+                            <td>355</td>
+                            <td>88.75%</td>
+                            <td><span class="grade-badge grade-a">A+</span></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Sarah Johnson</td>
+                            <td><input type="number" class="grade-input" value="91" min="0" max="100"></td>
+                            <td><input type="number" class="grade-input" value="94" min="0" max="100"></td>
+                            <td><input type="number" class="grade-input" value="89" min="0" max="100"></td>
+                            <td><input type="number" class="grade-input" value="92" min="0" max="100"></td>
+                            <td>366</td>
+                            <td>91.50%</td>
+                            <td><span class="grade-badge grade-a">A+</span></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Michael Brown</td>
+                            <td><input type="number" class="grade-input" value="75" min="0" max="100"></td>
+                            <td><input type="number" class="grade-input" value="78" min="0" max="100"></td>
+                            <td><input type="number" class="grade-input" value="82" min="0" max="100"></td>
+                            <td><input type="number" class="grade-input" value="80" min="0" max="100"></td>
+                            <td>315</td>
+                            <td>78.75%</td>
+                            <td><span class="grade-badge grade-b">B</span></td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Emma Davis</td>
+                            <td><input type="number" class="grade-input" value="85" min="0" max="100"></td>
+                            <td><input type="number" class="grade-input" value="87" min="0" max="100"></td>
+                            <td><input type="number" class="grade-input" value="84" min="0" max="100"></td>
+                            <td><input type="number" class="grade-input" value="86" min="0" max="100"></td>
+                            <td>342</td>
+                            <td>85.50%</td>
+                            <td><span class="grade-badge grade-a">A</span></td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>David Miller</td>
+                            <td><input type="number" class="grade-input" value="92" min="0" max="100"></td>
+                            <td><input type="number" class="grade-input" value="88" min="0" max="100"></td>
+                            <td><input type="number" class="grade-input" value="90" min="0" max="100"></td>
+                            <td><input type="number" class="grade-input" value="93" min="0" max="100"></td>
+                            <td>363</td>
+                            <td>90.75%</td>
+                            <td><span class="grade-badge grade-a">A+</span></td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>Lisa Anderson</td>
+                            <td><input type="number" class="grade-input" value="79" min="0" max="100"></td>
+                            <td><input type="number" class="grade-input" value="81" min="0" max="100"></td>
+                            <td><input type="number" class="grade-input" value="77" min="0" max="100"></td>
+                            <td><input type="number" class="grade-input" value="80" min="0" max="100"></td>
+                            <td>317</td>
+                            <td>79.25%</td>
+                            <td><span class="grade-badge grade-b">B+</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="form-actions">
+                <button class="btn btn-primary btn-lg">Save Grades</button>
+                <button class="btn btn-secondary btn-lg">Reset</button>
+            </div>
+        </div>
+
+        <!-- Performance Summary -->
+        <div class="card">
+            <div class="card-header">
+                <h3>Performance Summary</h3>
+            </div>
+            <div class="performance-grid">
+                <div class="perf-summary-card">
+                    <h4>Top Performers</h4>
+                    <ul class="performer-list">
+                        <li>
+                            <span>Sarah Johnson</span>
+                            <span class="score">91.50%</span>
+                        </li>
+                        <li>
+                            <span>David Miller</span>
+                            <span class="score">90.75%</span>
+                        </li>
+                        <li>
+                            <span>John Williams</span>
+                            <span class="score">88.75%</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="perf-summary-card">
+                    <h4>Grade Distribution</h4>
+                    <div class="grade-dist">
+                        <div class="dist-item">
+                            <span class="grade-label">A+ (90-100)</span>
+                            <div class="dist-bar">
+                                <div class="dist-fill" style="width: 50%"></div>
+                            </div>
+                            <span>3 students</span>
+                        </div>
+                        <div class="dist-item">
+                            <span class="grade-label">A (80-89)</span>
+                            <div class="dist-bar">
+                                <div class="dist-fill" style="width: 33%"></div>
+                            </div>
+                            <span>2 students</span>
+                        </div>
+                        <div class="dist-item">
+                            <span class="grade-label">B+ (70-79)</span>
+                            <div class="dist-bar">
+                                <div class="dist-fill" style="width: 17%"></div>
+                            </div>
+                            <span>1 student</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

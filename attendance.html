@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance - Student Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Sidebar -->
+    <nav class="sidebar">
+        <div class="logo-section">
+            <h1 class="logo">SMS</h1>
+            <p class="logo-text">Student Management</p>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="index.html" class="nav-link"><span class="icon">📊</span> Dashboard</a></li>
+            <li><a href="students.html" class="nav-link"><span class="icon">👥</span> Students</a></li>
+            <li><a href="classes.html" class="nav-link"><span class="icon">📚</span> Classes</a></li>
+            <li><a href="attendance.html" class="nav-link active"><span class="icon">✓</span> Attendance</a></li>
+            <li><a href="grades.html" class="nav-link"><span class="icon">📈</span> Grades</a></li>
+            <li><a href="reports.html" class="nav-link"><span class="icon">📋</span> Reports</a></li>
+            <li><a href="settings.html" class="nav-link"><span class="icon">⚙️</span> Settings</a></li>
+            <li><a href="login.html" class="nav-link logout"><span class="icon">🚪</span> Logout</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-left">
+            <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+            <h2>Attendance</h2>
+        </div>
+        <div class="header-right">
+            <input type="text" placeholder="Search..." class="search-box">
+            <div class="user-profile">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='10' fill='%234CAF50'/%3E%3Ctext x='12' y='15' text-anchor='middle' fill='white' font-size='12' font-weight='bold'%3EAD%3C/text%3E%3C/svg%3E" alt="Admin">
+                <span>Admin</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="page-header">
+            <div>
+                <h1>Attendance Management</h1>
+                <p>Mark and manage attendance</p>
+            </div>
+            <div class="action-buttons">
+                <button class="btn btn-primary">+ Record Attendance</button>
+                <button class="btn btn-secondary">📊 Reports</button>
+            </div>
+        </div>
+
+        <!-- Filters -->
+        <div class="card filter-section">
+            <div class="filter-group">
+                <label>Select Class:</label>
+                <select class="filter-select">
+                    <option>All Classes</option>
+                    <option>Class 9-A</option>
+                    <option>Class 9-B</option>
+                    <option>Class 10-A</option>
+                    <option>Class 10-B</option>
+                    <option>Class 10-C</option>
+                    <option>Class 11-A</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>Select Date:</label>
+                <input type="date" class="filter-input">
+            </div>
+            <div class="filter-group">
+                <label>Month:</label>
+                <select class="filter-select">
+                    <option>May 2026</option>
+                    <option>April 2026</option>
+                    <option>March 2026</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Attendance Overview -->
+        <div class="card">
+            <div class="card-header">
+                <h3>Today's Attendance</h3>
+            </div>
+            <div class="attendance-overview">
+                <div class="overview-stat">
+                    <span class="stat-label">Total Students</span>
+                    <span class="stat-value">1,245</span>
+                </div>
+                <div class="overview-stat">
+                    <span class="stat-label present">Present</span>
+                    <span class="stat-value">1,170</span>
+                </div>
+                <div class="overview-stat">
+                    <span class="stat-label absent">Absent</span>
+                    <span class="stat-value">65</span>
+                </div>
+                <div class="overview-stat">
+                    <span class="stat-label leave">Leave</span>
+                    <span class="stat-value">10</span>
+                </div>
+                <div class="overview-stat">
+                    <span class="stat-label">Overall %</span>
+                    <span class="stat-value">94%</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Attendance Table -->
+        <div class="card">
+            <div class="card-header">
+                <h3>Class 10-A Attendance (May 23, 2026)</h3>
+            </div>
+            <div class="table-responsive">
+                <table class="attendance-table">
+                    <thead>
+                        <tr>
+                            <th>Roll No.</th>
+                            <th>Student Name</th>
+                            <th>Status</th>
+                            <th>Remarks</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>John Williams</td>
+                            <td>
+                                <select class="attendance-select">
+                                    <option selected>Present</option>
+                                    <option>Absent</option>
+                                    <option>Leave</option>
+                                </select>
+                            </td>
+                            <td><input type="text" class="remarks-input" placeholder="Add remarks..."></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Sarah Johnson</td>
+                            <td>
+                                <select class="attendance-select">
+                                    <option selected>Present</option>
+                                    <option>Absent</option>
+                                    <option>Leave</option>
+                                </select>
+                            </td>
+                            <td><input type="text" class="remarks-input" placeholder="Add remarks..."></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Michael Brown</td>
+                            <td>
+                                <select class="attendance-select">
+                                    <option>Present</option>
+                                    <option selected>Absent</option>
+                                    <option>Leave</option>
+                                </select>
+                            </td>
+                            <td><input type="text" class="remarks-input" placeholder="Add remarks..."></td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Emma Davis</td>
+                            <td>
+                                <select class="attendance-select">
+                                    <option selected>Present</option>
+                                    <option>Absent</option>
+                                    <option>Leave</option>
+                                </select>
+                            </td>
+                            <td><input type="text" class="remarks-input" placeholder="Add remarks..."></td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>David Miller</td>
+                            <td>
+                                <select class="attendance-select">
+                                    <option selected>Present</option>
+                                    <option>Absent</option>
+                                    <option>Leave</option>
+                                </select>
+                            </td>
+                            <td><input type="text" class="remarks-input" placeholder="Add remarks..."></td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>Lisa Anderson</td>
+                            <td>
+                                <select class="attendance-select">
+                                    <option>Present</option>
+                                    <option>Absent</option>
+                                    <option selected>Leave</option>
+                                </select>
+                            </td>
+                            <td><input type="text" class="remarks-input" placeholder="Medical Checkup"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="form-actions">
+                <button class="btn btn-primary btn-lg">Save Attendance</button>
+                <button class="btn btn-secondary btn-lg">Reset</button>
+            </div>
+        </div>
+
+        <!-- Attendance Statistics -->
+        <div class="card">
+            <div class="card-header">
+                <h3>Monthly Attendance Report</h3>
+            </div>
+            <div class="attendance-stats-grid">
+                <div class="stat-item">
+                    <span class="stat-title">Class 9-A</span>
+                    <div class="mini-progress">
+                        <div class="mini-fill" style="width: 92%"></div>
+                    </div>
+                    <span class="stat-percent">92%</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-title">Class 9-B</span>
+                    <div class="mini-progress">
+                        <div class="mini-fill" style="width: 88%"></div>
+                    </div>
+                    <span class="stat-percent">88%</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-title">Class 10-A</span>
+                    <div class="mini-progress">
+                        <div class="mini-fill" style="width: 95%"></div>
+                    </div>
+                    <span class="stat-percent">95%</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-title">Class 10-B</span>
+                    <div class="mini-progress">
+                        <div class="mini-fill" style="width: 90%"></div>
+                    </div>
+                    <span class="stat-percent">90%</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-title">Class 10-C</span>
+                    <div class="mini-progress">
+                        <div class="mini-fill" style="width: 93%"></div>
+                    </div>
+                    <span class="stat-percent">93%</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-title">Class 11-A</span>
+                    <div class="mini-progress">
+                        <div class="mini-fill" style="width: 96%"></div>
+                    </div>
+                    <span class="stat-percent">96%</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
